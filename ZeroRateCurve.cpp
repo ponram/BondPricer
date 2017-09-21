@@ -22,7 +22,7 @@ namespace BondPricer
 			{
 				if (yearfraction != 0)
 				{
-					cont_rate = std::log(1 + hpy)*(1 / yearfraction); 
+					cont_rate = std::log(1 + hpy)*(1 / yearfraction); //something wrong here
 					zeroRates.insert(std::make_pair(dd.days(), cont_rate));
 				}
 				else
