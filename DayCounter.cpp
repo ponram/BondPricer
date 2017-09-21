@@ -46,8 +46,8 @@ namespace BondPricer
 			|| sDayCountConvention == "Act/365"
 			|| sDayCountConvention == "act/365")
 		{
-			date_duration dd = d1 - d2;
-			daycount = dd.days();
+			date_duration dd = d2 - d1; //actual no. of days based on gregorian calendar
+			daycount = std::abs(dd.days());
 
 		}
 

@@ -41,20 +41,19 @@ int main()
 		
 	int aMonthNodes[] = { 1,3,6 };
 	int aYearNodes[] = { 1,2,3,5,7,10,20,30 };
-	double aRates[] = { 0.96,1.04,1.14,1.22,1.27,1.39,1.64,1.89,2.06,2.41,2.67 };
+	double aRates[] = { 0.0096000,0.0102000,0.0110000,0.0124000,0.0135000,0.0146000,0.0173000,0.0199000,0.0216000,0.0251000,0.0277000 };
 	std::vector<int> vMonthNodes(aMonthNodes, aMonthNodes + (sizeof(aMonthNodes) / sizeof(aMonthNodes[0])));
 	std::vector<int> vYearNodes(aYearNodes, aYearNodes + (sizeof(aYearNodes) / sizeof(aYearNodes[0])));
 	DoubleVector vRates(aRates, aRates + (sizeof(aRates) / sizeof(aRates[0])));
 	
 	DateVector vDates;
 	for (unsigned int i = 0; i < vMonthNodes.size(); ++i)
-		vDates.push_back(anchordate + months(vMonthNodes[i]));
+		vDates.push_back(anchordate + months(vMonthNodes[i])); //add months to the anchor date
 	for (unsigned int i = 0; i < vYearNodes.size(); ++i)
-		vDates.push_back(anchordate + years(vYearNodes[i]));
+		vDates.push_back(anchordate + years(vYearNodes[i])); // add years to the achor date
 
 	YieldCurve yc(vDates, vRates, anchordate,"Act/365",SEMIANNUAL); //create an yield curve object
 	ZeroRateCurve zc(yc);
-	
 	
 	return 0;
 

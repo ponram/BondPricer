@@ -17,6 +17,7 @@ namespace BondPricer
 	{
 	public:
 		ZeroRateCurve(const YieldCurve& yc);
+		
 
 	private:
 		std::map<int, double> zeroRates;
