@@ -11,18 +11,7 @@ using namespace BondPricer;
 int main()
 {
 	
-	/*********Create Bond Objects***********/
-	Bond d;
-	
-	date issue_date(2017, 8, 10);
-	date maturity(2018, 8, 10);
-   	double notional = 1000;
-	double redemption_price = 100;
-	std::string currency = "USD";
-	double rate = 0.05;
-	int freq = 6;
-
-	Bond bond(notional, redemption_price,currency, rate, freq, issue_date, maturity);
+	/****Test DayCount Functions******/
 
 	DayCounter dc("30/360");
 	date d1(2007, 8, 31);
